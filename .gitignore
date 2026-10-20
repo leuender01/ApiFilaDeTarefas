@@ -1,0 +1,6 @@
+.env
+src/
+*.log
+*.class
+Teste.java
+teste.java
