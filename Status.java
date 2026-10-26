@@ -1,7 +1,9 @@
 package com;
 
-public enum Status {
-    EM_EXECUCAO,
+public enum Status
+{
     PENDENTE,
+    EM_EXECUCAO,
     CONCLUIDO
 }
+
