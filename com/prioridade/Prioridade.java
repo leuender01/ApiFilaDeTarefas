@@ -2,10 +2,11 @@ package com.prioridade;
 
 public enum Prioridade
 {
-    BAIXA(0),
-    MEDIA(1),
-    ALTA(2),
-    URGENTE(3);
+    FINALIZADA(0),
+    BAIXA(1),
+    MEDIA(2),
+    ALTA(3),
+    URGENTE(4);
     private int nivel;
     private Prioridade(int nivel)
     {
