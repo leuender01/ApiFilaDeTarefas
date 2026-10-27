@@ -1,23 +1,33 @@
 package com;
 
+import com.gerenciadorTarefas.GerenciadorTarefas;
 import com.prioridade.Prioridade;
-import com.tarefas.Tarefa;
 
 public class App {
     public static void main(String[] args) {
-        Tarefa[] tarefas =  new Tarefa[]
+        GerenciadorTarefas<String> gerenciadorTarefas = new GerenciadorTarefas<>();
+        gerenciadorTarefas.add("Ola mundo", Prioridade.BAIXA);
+        gerenciadorTarefas.add("Ola mundo", Prioridade.BAIXA);
+        gerenciadorTarefas.add("Ola mundo", Prioridade.BAIXA);
+        gerenciadorTarefas.add("Ola mundo", Prioridade.BAIXA);
+        gerenciadorTarefas.add("Ola mundo", Prioridade.ALTA);
+        gerenciadorTarefas.add("Ola mundo", Prioridade.ALTA);
+        gerenciadorTarefas.add("Ola mundo", Prioridade.ALTA);
+        gerenciadorTarefas.add("Ola mundo", Prioridade.BAIXA);
+        gerenciadorTarefas.add("Ola mundo", Prioridade.MEDIA);
+        gerenciadorTarefas.add("Ola mundo", Prioridade.URGENTE);
+        gerenciadorTarefas.add("Ola mundo", Prioridade.URGENTE);
+        gerenciadorTarefas.add("Ola mundo", Prioridade.URGENTE);
+        gerenciadorTarefas.execultarTask();
+        while (true)
         {
-            new Tarefa<String>("Ola mundo", Prioridade.BAIXA),
-            new Tarefa<String>("Tachau mundo", Prioridade.MEDIA),
-            new Tarefa<String>("Cava mundo", Prioridade.ALTA),
-            new Tarefa<String>("Sevidor", Prioridade.URGENTE)
-        };
-        for(var tarefa : tarefas)
-        {
-            System.out.println(tarefa);
-
+            try {
+                Thread.sleep(300);
+                System.out.println("\033[2J\033[H");
+                System.out.println(gerenciadorTarefas);
+            } catch (Exception e) {
+                System.out.println("ERRO: " + e.getMessage());
+            }
         }
-        System.out.println(tarefas[2].compareTo(tarefas[1]));
-        
     }
 }
